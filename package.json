@@ -1,0 +1,11 @@
+{
+  "name": "lawa",
+  "version": "1.0.0",
+  "description": "An Obsidian CLI helper tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "lawa -h"
+  },
+  "author": "Kieran O'Brien",
+  "license": "ISC"
+}
