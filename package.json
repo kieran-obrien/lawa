@@ -1,11 +1,17 @@
 {
-  "name": "lawa",
-  "version": "1.0.0",
-  "description": "An Obsidian CLI helper tool.",
-  "main": "index.js",
-  "scripts": {
-    "test": "lawa -h"
-  },
-  "author": "Kieran O'Brien",
-  "license": "ISC"
+    "name": "lawa",
+    "version": "1.0.0",
+    "description": "An Obsidian CLI helper tool.",
+    "main": "index.js",
+    "scripts": {
+        "test": "lawa -h"
+    },
+    "author": "Kieran O'Brien",
+    "license": "ISC",
+    "bin": {
+        "lawa": "./index.js"
+    },
+    "dependencies": {
+        "commander": "^13.1.0"
+    }
 }

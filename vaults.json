@@ -1,0 +1,24 @@
+{
+  "paths": [
+    {
+      "path": "thisisapath",
+      "vaultName": "VaultExample"
+    },
+    {
+      "path": "testpath",
+      "vaultName": "testname"
+    },
+    {
+      "path": "testpath",
+      "vaultName": "testname"
+    },
+    {
+      "path": "testpath",
+      "vaultName": "testname"
+    },
+    {
+      "path": "testpath",
+      "vaultName": "testname"
+    }
+  ]
+}
