@@ -1,0 +1,39 @@
+{
+    "vaults": [
+        {
+            "path": "thisisapath",
+            "vaultName": "VaultExample",
+            "activeVault": true
+        },
+        {
+            "path": "testpath",
+            "vaultName": "testname",
+            "activeVault": false
+        },
+        {
+            "path": "testpath",
+            "vaultName": "testname",
+            "activeVault": false
+        },
+        {
+            "path": "testpath",
+            "vaultName": "testname",
+            "activeVault": false
+        },
+        {
+            "path": "testpath",
+            "vaultName": "testname",
+            "activeVault": false
+        },
+        {
+            "path": "/path/end/",
+            "vaultName": "end",
+            "activeVault": false
+        },
+        {
+            "path": "/path/diff",
+            "vaultName": "diff",
+            "activeVault": false
+        }
+    ]
+}
