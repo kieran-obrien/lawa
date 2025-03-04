@@ -34,15 +34,28 @@ function saveVault(path, vaultName) {
 program
     .version("1.0.0")
     .description("An Obsidian CLI helper tool.")
-    .action((options) => {
-        console.log(`Hey, ${options.name}!`);
+    .action(() => {
+        console.log("You're using lawa, an Obsidian helper tool.");
+        console.log("Use lawa --help for more info on usage.");
     });
 
 program
     .command("activate <vaultName>")
     .description("switch active vault to specified vault name")
     .action((vaultName) => {
-        console.log("Setting active vault to: ", vaultName);
+        console.log("Setting active vault to:", vaultName);
+        for (let entry of vaults) {
+            if (entry.activeVault) {
+                entry.activeVault = false;
+            }
+            if (entry.vaultName === vaultName) {
+                entry.activeVault = true;
+            }
+        }
+        fs.writeFileSync(
+            settingsJson,
+            JSON.stringify({ vaults: vaults }, null, 2)
+        );
     });
 
 program
@@ -81,7 +94,7 @@ program
                     finalName = finalName[finalName.length - 2];
                 } else finalName = finalName[finalName.length - 1]; // Write some tests here
             }
-            console.log(`Adding vault ${finalName} at path ${options.add}`);
+            console.log(`Adding vault ${finalName} with path ${options.add}`);
             saveVault(options.add, finalName);
         }
     });
