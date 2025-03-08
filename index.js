@@ -11,6 +11,7 @@ const vaults = helpers.loadPaths(); // Vaults array of obj
 const vaultNames = vaults.map((vault) => vault.vaultName); // Vaults array of str names
 
 const saveVault = helpers.saveVault;
+const writeToSettingsJSON = helpers.writeToSettingsJSON;
 
 program
     .version("1.0.0")
@@ -34,12 +35,12 @@ program
                 entry.activeVault = true;
             }
         }
-        if (!isVaultExist) return console.log("Vault not found, use lawa vault --help for details") // Vault not on file
+        if (!isVaultExist)
+            return console.log(
+                "Vault not found, use lawa vault --help for details"
+            ); // Vault not on file
         console.log("Active vault set to:", vaultName);
-        fs.writeFileSync( 
-            settingsJson,
-            JSON.stringify({ vaults: vaults }, null, 2)
-        );
+        writeToSettingsJSON(settingsJson, vaults);
     });
 
 program
@@ -54,7 +55,6 @@ program
     .action((options) => {
         if (!options.add) {
             for (let entry of vaults) {
-                
                 if (entry.activeVault) {
                     if (options.verbose) {
                         console.log(
@@ -63,14 +63,16 @@ program
                             "at path",
                             entry.path
                         );
-                        return
+                        return;
                     } else {
                         console.log("Currently active vault:", entry.vaultName);
-                        return
+                        return;
                     }
                 }
             }
-            console.log("No currently active vault, use lawa activate <vaultName>")
+            console.log(
+                "No currently active vault, use lawa activate <vaultName>"
+            );
         } else if (options.add) {
             let finalName = "";
             if (options.name) {
@@ -96,6 +98,4 @@ program
         }
     });
 
-//saveVault("testpath", "testname");
-
-program.parse(process.argv);
+program.parse();

@@ -25,7 +25,11 @@ function saveVault(path, vaultName, vaults) {
         }
     }
     vaults.push({ path: path, vaultName: vaultName, activeVault: false });
-    fs.writeFileSync(settingsJson, JSON.stringify({ vaults: vaults }, null, 2));
+    writeToSettingsJSON(settingsJson, vaults);
+}
+
+function writeToSettingsJSON(settings, vaults) {
+    fs.writeFileSync(settings, JSON.stringify({ vaults: vaults }, null, 2));
 }
 
 module.exports = { settingsJson, loadPaths, saveVault };
