@@ -11,38 +11,8 @@
       "activeVault": false
     },
     {
-      "path": "testpath",
-      "vaultName": "testname",
-      "activeVault": false
-    },
-    {
-      "path": "testpath",
-      "vaultName": "testname",
-      "activeVault": false
-    },
-    {
-      "path": "testpath",
-      "vaultName": "testname",
-      "activeVault": false
-    },
-    {
-      "path": "/path/end/",
-      "vaultName": "end",
-      "activeVault": false
-    },
-    {
-      "path": "/path/diff",
-      "vaultName": "diff",
-      "activeVault": false
-    },
-    {
-      "path": "this/path/rocks",
-      "vaultName": "kiki",
-      "activeVault": false
-    },
-    {
       "path": "/home/kieran/Documents/Know",
-      "vaultName": "actualvault",
+      "vaultName": "Know",
       "activeVault": false
     }
   ]
